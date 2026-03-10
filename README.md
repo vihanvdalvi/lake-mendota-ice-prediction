@@ -1,2 +1,34 @@
-# lake-mendota-ice-prediction
-Trained a polynomial regression model on 1855–2023 Lake Mendota ice coverage data using Python. Applied data normalization, feature engineering, and gradient descent to optimize model parameters. Visualized historical trends, predicted ice days for 2023–24, and analyzed the local rate of change to interpret long-term patterns.
+# Lake Mendota Ice Prediction – Polynomial Regression
+
+This project demonstrates **training a polynomial regression model** on historical ice coverage data for **Lake Mendota** from 1855–56 to 2022–23. The model predicts future ice days, visualizes historical trends, and analyzes the rate of change in ice coverage over time.
+
+## Project Overview
+
+The dataset (`ice_data.csv`) contains:
+
+- **Year (`x`)** – starting year of winter (e.g., 1855 for 1855–56)  
+- **Number of ice days (`y`)** – total days the lake was frozen that year  
+
+The project tasks include:
+
+- Visualizing historical ice coverage trends  
+- Normalizing data and constructing polynomial features  
+- Training a polynomial regression model using **closed-form least squares**  
+- Training the model using **gradient descent** and tracking convergence  
+- Predicting the number of ice days for **2023–24**  
+- Estimating and interpreting the local rate of change in ice coverage  
+
+## Features Implemented
+
+- **Data Visualization:** Generates `data_plot.jpg` (year vs. ice days)  
+- **Feature Engineering:** Min-max normalization and polynomial feature augmentation  
+- **Closed-Form Solution:** Computes optimal polynomial coefficients using the normal equation  
+- **Gradient Descent:** Vectorized implementation with adjustable learning rate and iterations; generates `loss_plot.jpg`  
+- **Prediction & Analysis:** Predicts ice days for 2023–24 and computes local rate of change  
+
+## Usage
+
+Run the program as follows:
+
+```bash
+python3 lake_mendota_regression.py <filename.csv> <degree> <learning_rate> <iterations>
